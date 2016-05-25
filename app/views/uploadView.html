@@ -1,37 +1,41 @@
-<button class="btn-primary" ng-click="uploadData()">send</button>
+<button class="btn btn-primary" ng-click="uploadData()">send</button>
 <input type="file" ng-model="imageFile" id="fileInput">
 <div class="imageBlock imageOne">
+    <h3 class=""> Horizontal 755 X 450</h3>
     <div style="display: inline-block;">
-        <canvas width="500" height="300" id="canvas" image-cropper image="mainImage.src" cropped-image="image.horizontal" crop-width="755" crop-height="450" keep-aspect="true" touch-radius="30" crop-area-bounds="bounds"></canvas>
+        <canvas width="512" height="512" id="canvas" image-cropper image="mainImage.src" cropped-image="image.horizontal" crop-width="755" crop-height="450" keep-aspect="true" touch-radius="30" crop-area-bounds="bounds"></canvas>
     </div>
     <div style="display: inline-block;" ng-show="image.horizontal!=null">
-        <img width="400" height="200" ng-src="{{image.horizontal}}">
+        <img width="755" height="450" ng-src="{{image.horizontal}}">
     </div>
 </div>
 &nbsp;
 <div class="imageBlock imageTwo">
+    <h3 class=""> Vertical 365 X 450</h3>
     <div style="display: inline-block;">
-        <canvas width="500" height="300" id="canvas2" image-cropper image="mainImage.src" cropped-image="image.vertical" crop-width="365" crop-height="450" keep-aspect="true" touch-radius="30" crop-area-bounds="bounds"></canvas>
+        <canvas width="512" height="512" id="canvas2" image-cropper image="mainImage.src" cropped-image="image.vertical" crop-width="365" crop-height="450" min-width="365" min-height="450" keep-aspect="true" touch-radius="30" crop-area-bounds="bounds"></canvas>
     </div>
     <div style="display: inline-block;" ng-show="image.vertical!=null">
-        <img width="200" height="200" ng-src="{{image.vertical}}">
+        <img width="365" height="450" ng-src="{{image.vertical}}">
     </div>
 </div>
 &nbsp;
 <div class="imageBlock imageThree">
+    <h3 class=""> Horizontal Small 365 X 212</h3>
     <div style="display: inline-block;">
-        <canvas width="500" height="300" id="canvas3" image-cropper image="mainImage.src" cropped-image="image.horizontalSmall" crop-width="365" crop-height="212" keep-aspect="true" touch-radius="30" crop-area-bounds="bounds"></canvas>
+        <canvas width="512" height="512" id="canvas3" image-cropper image="mainImage.src" cropped-image="image.horizontalSmall" crop-width="365" crop-height="212" keep-aspect="true" touch-radius="30" crop-area-bounds="bounds"></canvas>
     </div>
     <div style="display: inline-block;" ng-show="image.horizontalSmall!=null">
-        <img width="200" height="200" ng-src="{{image.horizontalSmall}}">
+        <img width="365" height="212" ng-src="{{image.horizontalSmall}}">
     </div>
 </div>
 &nbsp;
 <div class="imageBlock imageFour">
+    <h3 class=""> Gallery 380 X 380</h3>
     <div style="display: inline-block;">
-        <canvas width="500" height="300" id="canvas4" image-cropper image="mainImage.src" cropped-image="image.gallery" crop-width="380" crop-height="380" keep-aspect="true" touch-radius="30" crop-area-bounds="bounds"></canvas>
+        <canvas width="512" height="512" id="canvas4" image-cropper image="mainImage.src" cropped-image="image.gallery" crop-width="380" crop-height="380" keep-aspect="true" touch-radius="30" crop-area-bounds="bounds"></canvas>
     </div>
     <div style="display: inline-block;" ng-show="image.gallery!=null">
-        <img width="200" height="200" ng-src="{{image.gallery}}">
+        <img width="380" height="380" ng-src="{{image.gallery}}">
     </div>
 </div>

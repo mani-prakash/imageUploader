@@ -1,10 +1,10 @@
 App.controller('AppController', function($scope,DataStore, $http) {
+    $scope.isUpload = true;
     var changeEvent = function (event) {
         console.log("file change event");
         $scope.mainImage = null;
         $scope.cropper = {};
         $scope.image = {};
-        $scope.isUpload = true;
         console.log("change file");
         var file=event.currentTarget.files[0];
         var reader = new FileReader();
@@ -12,7 +12,17 @@ App.controller('AppController', function($scope,DataStore, $http) {
             $scope.$apply(function($scope){
                 $scope.myImage=evt.target.result;
                 console.log($scope.myImage);
-                setImage(evt.target.result);
+                var image = new Image;
+                    image.src = evt.target.result;
+                //console.log(image);
+                //PopUp.show("the recomended height :"+image.height+" width :"+image.width);
+                if(image.width===1024&&image.height===1024)
+                {
+                    setImage(evt.target.result);
+                }
+                else{
+                    PopUp.show("the recomended image dimension is 1024 X 1024");
+                }
             });
         };
         reader.readAsDataURL(file);
@@ -21,27 +31,29 @@ App.controller('AppController', function($scope,DataStore, $http) {
         console.log(JSON.stringify(data));
         $http.post(Constants.URL + "/save", data).success(function (res) {
             console.log(res);
-            alert("save success");
+            PopUp.show("images are stored");
             $scope.clearUploadImages();
         }).error(function (err, status) {
-            console.log("error");
+            PopUp.show("error while storing images");
         });
     }
     function getImagedata(id) {
         $http.get(Constants.URL + "/" +id).success(function (res) {
+            PopUp.show("recieved images");
             console.log(JSON.stringify(res));
             setViewImages(res[0]);
-            //$scope.clearViewImages();
-            alert("got images");
         }).error(function (err, status) {
-            console.log("error");
+            PopUp.show("error while recieving images");
         });
     }
-    $scope.alert = function(txt){
-        alert(txt);
-    };
     $scope.getServerImages = function(){
-        getImagedata($scope.userName);
+        if(Utils.validate($scope.userName)&&$scope.userName!=="")
+        {
+            getImagedata($scope.userName);
+        }
+        else{
+            PopUp.show("please enter user name");
+        }
     };
     function getPostData(){
         var data = {};
@@ -66,10 +78,12 @@ App.controller('AppController', function($scope,DataStore, $http) {
             //alert($scope.mainImage.width); // image is loaded; sizes are available
             //alert($scope.mainImage.height); // image is loaded; sizes are available
             //console.log($scope.mainImage.src);
+
         };
         $scope.mainImage.src = result;
     }
     $scope.clearUploadImages = function(){
+        $scope.mainImage = null;
         $scope.image.horizontal = null;
         $scope.image.vertical = null;
         $scope.image.horizontalSmall = null;

@@ -22,6 +22,7 @@
   <script src="services/DataStore.js"></script>
   <script src="controllers/AppController.js"></script>
   <link rel="stylesheet" href="styles/style.css">
+  <!--script src="bower_components/angular-img-cropper/src/angular-img-cropper.js"></script-->
   <script src="bower_components/angular-img-cropper/dist/angular-img-cropper.min.js"></script>
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
@@ -50,6 +51,9 @@
 
       </ng-include>
     </div>
+    <div id="MessageNotify" style="">
+      <span></span>
+    </div>
   </div>
 
   <!-- In production use:
@@ -58,5 +62,11 @@
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
+  <script>
+    function onloadFun(){
+      PopUp.init({selector: document.getElementById('MessageNotify')});
+    }
+    window.onload = onloadFun;
+  </script>
 </body>
 </html>

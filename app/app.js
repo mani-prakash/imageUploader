@@ -5,5 +5,4 @@ var App = angular.module('App', [
   'ngRoute','angular-img-cropper'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  //$routeProvider.otherwise({redirectTo: '/view1'});
 }]);

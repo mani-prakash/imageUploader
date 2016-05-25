@@ -28,4 +28,20 @@
 }
 .imageLayout{
     padding: 3px 8px;
+    margin: 10px;
+}
+#MessageNotify{
+    background-color: #D9EDF7;
+    color: #2e6da4;
+    position: fixed;
+    top:10px;
+    right: 20%;
+    max-height: 400px;
+    max-width: 600px;
+    padding: 10px;
+    display: none;
+    border-radius: 2px;
+    border: solid 1px #2e6da4;
+    z-index: 10;
+    font-size: 140%;
 }

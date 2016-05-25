@@ -1,25 +1,25 @@
 <div class="container">
-<h4>Image Viewer</h4><button class="btn-primary" ng-click="getServerImages()">Get Images</button>
+<h4>Image Viewer</h4>
+    <button class="btn btn-primary" ng-click="getServerImages()">Get Images</button>
+    <button class="btn btn-success" ng-click="clearViewImages()">clear Images</button>
 </div>
 <div class="container">
-    <div class="row">
-        <div class="col-lg-6 imageLayout">
-            <img class="horizontal" src="{{ viewHorizontal }}">
-            <h3> Horizontal 755 X 450</h3>
+        <div class="row imageLayout">
+            <img class="horizontal col-lg-8" src="{{ viewHorizontal }}">
+            <h3 class="col-lg-2"> Horizontal 755 X 450</h3>
         </div>
-        <div class="col-lg-6 imageLayout">
-            <img class="vertical" src="{{ viewVertical }}">
-            <h3> Vertical 365 X 450</h3>
+        <div class="row imageLayout">
+            <img class="vertical col-lg-8" src="{{ viewVertical }}">
+            <h3 class="col-lg-4"> Vertical 365 X 450</h3>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-6 imageLayout">
-            <img class="horizontalSmall" src="{{ viewHorizontalSmall }}">
-            <h3> Horizontal Small 365 X 212</h3>
+
+        <div class="row imageLayout">
+            <img class="horizontalSmall col-lg-8" src="{{ viewHorizontalSmall }}">
+            <h3 class="col-lg-4"> Horizontal Small 365 X 212</h3>
         </div>
-        <div class="col-lg-6 imageLayout">
-            <img class="gallery" src="{{ viewGallery }}">
-            <h3> Gallery 380 X 380</h3>
+
+        <div class="row imageLayout">
+            <img class="gallery col-lg-8" src="{{ viewGallery }}">
+            <h3 class="col-lg-4"> Gallery 380 X 380</h3>
         </div>
-    </div>
 </div>
