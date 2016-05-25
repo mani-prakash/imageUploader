@@ -1,0 +1,31 @@
+
+#header
+{
+    width: 100%;
+    height: 40px;
+    background-color: #222222;
+}
+
+.viewImage{
+    height: 100px;
+    width: 100px;
+}
+.horizontal{
+    height: 450px;
+    width: 755px;
+}
+.vertical{
+    height: 450px;
+    width: 365px;
+}
+.horizontalSmall{
+    height: 212px;
+    width: 365px;
+}
+.gallery{
+    height: 380px;
+    width: 380px;
+}
+.imageLayout{
+    padding: 3px 8px;
+}

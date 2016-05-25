@@ -1,0 +1,25 @@
+<div class="container">
+<h4>Image Viewer</h4><button class="btn-primary" ng-click="getServerImages()">Get Images</button>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 imageLayout">
+            <img class="horizontal" src="{{ viewHorizontal }}">
+            <h3> Horizontal 755 X 450</h3>
+        </div>
+        <div class="col-lg-6 imageLayout">
+            <img class="vertical" src="{{ viewVertical }}">
+            <h3> Vertical 365 X 450</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 imageLayout">
+            <img class="horizontalSmall" src="{{ viewHorizontalSmall }}">
+            <h3> Horizontal Small 365 X 212</h3>
+        </div>
+        <div class="col-lg-6 imageLayout">
+            <img class="gallery" src="{{ viewGallery }}">
+            <h3> Gallery 380 X 380</h3>
+        </div>
+    </div>
+</div>
