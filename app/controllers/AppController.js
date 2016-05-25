@@ -83,6 +83,7 @@ App.controller('AppController', function($scope,DataStore, $http) {
         $scope.mainImage.src = result;
     }
     $scope.clearUploadImages = function(){
+        $scope.mainImage.src = null;
         $scope.mainImage = null;
         $scope.image.horizontal = null;
         $scope.image.vertical = null;
@@ -96,8 +97,14 @@ App.controller('AppController', function($scope,DataStore, $http) {
         $scope.viewGallery = null;
     };
     $scope.uploadData = function(){
-        var data = getPostData();
-        sendPostdata(data);
+        if(Utils.validate($scope.userName)&&$scope.userName!=="")
+        {
+            var data = getPostData();
+            sendPostdata(data);
+        }
+        else{
+            PopUp.show("please enter username");
+        }
     };
     $scope.setUploadView = function(){
         console.log("load upload view");
@@ -116,7 +123,6 @@ App.controller('AppController', function($scope,DataStore, $http) {
     $scope.setPhotoView = function(){
         console.log("load image view");
         $scope.isUpload = false;
-        //var event = angular.element(document.querySelector('#fileInput')).on('change',changeEvent);
         console.log(event);
     };
     $scope.getData = function(){
